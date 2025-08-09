@@ -163,7 +163,13 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('images/hero/hero1.jpg');
+    /*
+     * Use a remote Unsplash image for the hero banner so that the
+     * hero doesn’t depend on a local asset. When you add your own
+     * banner images to images/hero/ in your repo, change this URL
+     * back to something like url('images/hero/your-hero.jpg').
+     */
+    background-image: url('https://source.unsplash.com/1920x1080/?jewellery,luxury');
     background-size: cover;
     background-position: center;
 }

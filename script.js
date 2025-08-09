@@ -9,31 +9,44 @@
  */
 
 // Catalogue definitions
+/*
+ * Category definitions.
+ *
+ * The `image` property for each category previously referenced
+ * placeholder files in the repository (e.g. images/earrings/placeholder1.jpg).
+ * Those placeholders aren't hosted on GitHub Pages yet, which caused
+ * broken images on the live site. To ensure the website looks
+ * professional out‑of‑the‑box, we now point these to high quality
+ * royalty‑free Unsplash images. Unsplash’s source API returns a
+ * random photo on each request, so each refresh gives a fresh look.
+ * When you upload your own product photography into the `images/<category>`
+ * folders, you can change these URLs back to local paths.
+ */
 const categories = [
     {
         id: 'earrings',
         name: 'Earrings',
-        image: 'images/earrings/placeholder1.jpg'
+        image: 'https://source.unsplash.com/400x300/?earrings,jewellery'
     },
     {
         id: 'rings',
         name: 'Rings',
-        image: 'images/rings/placeholder1.jpg'
+        image: 'https://source.unsplash.com/400x300/?rings,jewellery'
     },
     {
         id: 'jhumka',
         name: 'Jhumka',
-        image: 'images/jhumka/placeholder1.jpg'
+        image: 'https://source.unsplash.com/400x300/?jhumka,jewellery'
     },
     {
         id: 'bracelet',
         name: 'Bracelet',
-        image: 'images/bracelet/placeholder1.jpg'
+        image: 'https://source.unsplash.com/400x300/?bracelet,jewellery'
     },
     {
         id: 'payal',
         name: 'Payal',
-        image: 'images/payal/placeholder1.jpg'
+        image: 'https://source.unsplash.com/400x300/?anklet,jewellery'
     }
 ];
 
@@ -42,136 +55,139 @@ const categories = [
 // category, name, image, description and link. Additional
 // properties can be added as needed.
 const products = [
-    {
-        id: 'earring1',
-        category: 'earrings',
-        name: 'Pearl Drop Earrings',
-        image: 'images/earrings/placeholder1.jpg',
-        images: [
-            'https://source.unsplash.com/800x600/?earrings',
-            'https://source.unsplash.com/800x600/?earrings,pearls',
-            'https://source.unsplash.com/800x600/?earrings,gold'
-        ],
-        description: 'Elegant pearl drop earrings with gold plating, perfect for festive occasions.',
-        link: 'https://www.meesho.com/search/pearl-earrings'
-    },
-    {
-        id: 'earring2',
-        category: 'earrings',
-        name: 'Gold Stud Earrings',
-        image: 'images/earrings/placeholder2.jpg',
-        images: [
-            'https://source.unsplash.com/800x600/?stud-earrings',
-            'https://source.unsplash.com/800x600/?earrings,stud,gold',
-            'https://source.unsplash.com/800x600/?earrings,classic'
-        ],
-        description: 'Minimalist gold stud earrings that add a subtle touch of luxury.',
-        link: 'https://www.meesho.com/search/gold-stud-earrings'
-    },
-    {
-        id: 'ring1',
-        category: 'rings',
-        name: 'Crystal Stone Ring',
-        image: 'images/rings/placeholder1.jpg',
-        images: [
-            'https://source.unsplash.com/800x600/?ring,crystal',
-            'https://source.unsplash.com/800x600/?ring,stone',
-            'https://source.unsplash.com/800x600/?ring,jewellery'
-        ],
-        description: 'Statement ring featuring a shimmering crystal stone set on a gold band.',
-        link: 'https://www.meesho.com/search/crystal-ring'
-    },
-    {
-        id: 'ring2',
-        category: 'rings',
-        name: 'Delicate Band Ring',
-        image: 'images/rings/placeholder2.jpg',
-        images: [
-            'https://source.unsplash.com/800x600/?ring,band',
-            'https://source.unsplash.com/800x600/?ring,delicate',
-            'https://source.unsplash.com/800x600/?ring,simple'
-        ],
-        description: 'A thin, delicate band ring suitable for stacking or wearing alone.',
-        link: 'https://www.meesho.com/search/delicate-ring'
-    },
-    {
-        id: 'jhumka1',
-        category: 'jhumka',
-        name: 'Traditional Jhumka',
-        image: 'images/jhumka/placeholder1.jpg',
-        images: [
-            'https://source.unsplash.com/800x600/?jhumka,traditional',
-            'https://source.unsplash.com/800x600/?jhumka,earrings',
-            'https://source.unsplash.com/800x600/?jhumka'
-        ],
-        description: 'Classic bell‑shaped jhumkas with intricate detailing and pearls.',
-        link: 'https://www.meesho.com/search/traditional-jhumka'
-    },
-    {
-        id: 'jhumka2',
-        category: 'jhumka',
-        name: 'Antique Oxidised Jhumka',
-        image: 'images/jhumka/placeholder2.jpg',
-        images: [
-            'https://source.unsplash.com/800x600/?jhumka,oxidised',
-            'https://source.unsplash.com/800x600/?jhumka,antique',
-            'https://source.unsplash.com/800x600/?jhumka,silver'
-        ],
-        description: 'Oxidised silver jhumkas that lend a vintage charm to your outfit.',
-        link: 'https://www.meesho.com/search/oxidised-jhumka'
-    },
-    {
-        id: 'bracelet1',
-        category: 'bracelet',
-        name: 'Charm Bracelet',
-        image: 'images/bracelet/placeholder1.jpg',
-        images: [
-            'https://source.unsplash.com/800x600/?bracelet,charm',
-            'https://source.unsplash.com/800x600/?bracelet,gold',
-            'https://source.unsplash.com/800x600/?bracelet,fashion'
-        ],
-        description: 'Gold plated charm bracelet with delicate pendants.',
-        link: 'https://www.meesho.com/search/charm-bracelet'
-    },
-    {
-        id: 'bracelet2',
-        category: 'bracelet',
-        name: 'Kada Bangle',
-        image: 'images/bracelet/placeholder2.jpg',
-        images: [
-            'https://source.unsplash.com/800x600/?bangle,kada',
-            'https://source.unsplash.com/800x600/?bracelet,bangle',
-            'https://source.unsplash.com/800x600/?bracelet,traditional'
-        ],
-        description: 'Traditional kada bangle with engraved patterns.',
-        link: 'https://www.meesho.com/search/kada-bangle'
-    },
-    {
-        id: 'payal1',
-        category: 'payal',
-        name: 'Silver Payal',
-        image: 'images/payal/placeholder1.jpg',
-        images: [
-            'https://source.unsplash.com/800x600/?payal,anklet',
-            'https://source.unsplash.com/800x600/?anklet,silver',
-            'https://source.unsplash.com/800x600/?anklet'
-        ],
-        description: 'Elegant silver anklet with small ghungroos.',
-        link: 'https://www.meesho.com/search/silver-payal'
-    },
-    {
-        id: 'payal2',
-        category: 'payal',
-        name: 'Minimalist Payal',
-        image: 'images/payal/placeholder2.jpg',
-        images: [
-            'https://source.unsplash.com/800x600/?payal,minimalist',
-            'https://source.unsplash.com/800x600/?anklet,minimalist',
-            'https://source.unsplash.com/800x600/?anklet,jewellery'
-        ],
-        description: 'Sleek and lightweight payal ideal for everyday wear.',
-        link: 'https://www.meesho.com/search/minimalist-payal'
-    }
+        {
+            id: 'earring1',
+            category: 'earrings',
+            name: 'Pearl Drop Earrings',
+            // Show a remote Unsplash image by default on the card. When you
+            // add your own product photos to images/earrings, set this to
+            // something like 'images/earrings/pearldrop.jpg'.
+            image: 'https://source.unsplash.com/400x300/?earrings,pearls',
+            images: [
+                'https://source.unsplash.com/800x600/?earrings,pearls',
+                'https://source.unsplash.com/800x600/?earrings,gold',
+                'https://source.unsplash.com/800x600/?earrings,drop'
+            ],
+            description: 'Elegant pearl drop earrings with gold plating, perfect for festive occasions.',
+            link: 'https://www.meesho.com/search/pearl-earrings'
+        },
+        {
+            id: 'earring2',
+            category: 'earrings',
+            name: 'Gold Stud Earrings',
+            image: 'https://source.unsplash.com/400x300/?earrings,stud,gold',
+            images: [
+                'https://source.unsplash.com/800x600/?stud-earrings',
+                'https://source.unsplash.com/800x600/?earrings,stud,gold',
+                'https://source.unsplash.com/800x600/?earrings,classic'
+            ],
+            description: 'Minimalist gold stud earrings that add a subtle touch of luxury.',
+            link: 'https://www.meesho.com/search/gold-stud-earrings'
+        },
+        {
+            id: 'ring1',
+            category: 'rings',
+            name: 'Crystal Stone Ring',
+            image: 'https://source.unsplash.com/400x300/?ring,crystal',
+            images: [
+                'https://source.unsplash.com/800x600/?ring,crystal',
+                'https://source.unsplash.com/800x600/?ring,stone',
+                'https://source.unsplash.com/800x600/?ring,jewellery'
+            ],
+            description: 'Statement ring featuring a shimmering crystal stone set on a gold band.',
+            link: 'https://www.meesho.com/search/crystal-ring'
+        },
+        {
+            id: 'ring2',
+            category: 'rings',
+            name: 'Delicate Band Ring',
+            image: 'https://source.unsplash.com/400x300/?ring,band',
+            images: [
+                'https://source.unsplash.com/800x600/?ring,band',
+                'https://source.unsplash.com/800x600/?ring,delicate',
+                'https://source.unsplash.com/800x600/?ring,simple'
+            ],
+            description: 'A thin, delicate band ring suitable for stacking or wearing alone.',
+            link: 'https://www.meesho.com/search/delicate-ring'
+        },
+        {
+            id: 'jhumka1',
+            category: 'jhumka',
+            name: 'Traditional Jhumka',
+            image: 'https://source.unsplash.com/400x300/?jhumka,traditional',
+            images: [
+                'https://source.unsplash.com/800x600/?jhumka,traditional',
+                'https://source.unsplash.com/800x600/?jhumka,earrings',
+                'https://source.unsplash.com/800x600/?jhumka'
+            ],
+            description: 'Classic bell‑shaped jhumkas with intricate detailing and pearls.',
+            link: 'https://www.meesho.com/search/traditional-jhumka'
+        },
+        {
+            id: 'jhumka2',
+            category: 'jhumka',
+            name: 'Antique Oxidised Jhumka',
+            image: 'https://source.unsplash.com/400x300/?jhumka,antique',
+            images: [
+                'https://source.unsplash.com/800x600/?jhumka,oxidised',
+                'https://source.unsplash.com/800x600/?jhumka,antique',
+                'https://source.unsplash.com/800x600/?jhumka,silver'
+            ],
+            description: 'Oxidised silver jhumkas that lend a vintage charm to your outfit.',
+            link: 'https://www.meesho.com/search/oxidised-jhumka'
+        },
+        {
+            id: 'bracelet1',
+            category: 'bracelet',
+            name: 'Charm Bracelet',
+            image: 'https://source.unsplash.com/400x300/?bracelet,charm',
+            images: [
+                'https://source.unsplash.com/800x600/?bracelet,charm',
+                'https://source.unsplash.com/800x600/?bracelet,gold',
+                'https://source.unsplash.com/800x600/?bracelet,fashion'
+            ],
+            description: 'Gold plated charm bracelet with delicate pendants.',
+            link: 'https://www.meesho.com/search/charm-bracelet'
+        },
+        {
+            id: 'bracelet2',
+            category: 'bracelet',
+            name: 'Kada Bangle',
+            image: 'https://source.unsplash.com/400x300/?bracelet,bangle',
+            images: [
+                'https://source.unsplash.com/800x600/?bangle,kada',
+                'https://source.unsplash.com/800x600/?bracelet,bangle',
+                'https://source.unsplash.com/800x600/?bracelet,traditional'
+            ],
+            description: 'Traditional kada bangle with engraved patterns.',
+            link: 'https://www.meesho.com/search/kada-bangle'
+        },
+        {
+            id: 'payal1',
+            category: 'payal',
+            name: 'Silver Payal',
+            image: 'https://source.unsplash.com/400x300/?anklet,silver',
+            images: [
+                'https://source.unsplash.com/800x600/?payal,anklet',
+                'https://source.unsplash.com/800x600/?anklet,silver',
+                'https://source.unsplash.com/800x600/?anklet'
+            ],
+            description: 'Elegant silver anklet with small ghungroos.',
+            link: 'https://www.meesho.com/search/silver-payal'
+        },
+        {
+            id: 'payal2',
+            category: 'payal',
+            name: 'Minimalist Payal',
+            image: 'https://source.unsplash.com/400x300/?anklet,minimalist',
+            images: [
+                'https://source.unsplash.com/800x600/?payal,minimalist',
+                'https://source.unsplash.com/800x600/?anklet,minimalist',
+                'https://source.unsplash.com/800x600/?anklet,jewellery'
+            ],
+            description: 'Sleek and lightweight payal ideal for everyday wear.',
+            link: 'https://www.meesho.com/search/minimalist-payal'
+        }
 ];
 
 // DOM elements
