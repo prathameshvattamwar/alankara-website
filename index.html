@@ -1,113 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alankara Jewellery & Accessories</title>
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- GSAP + ScrollTrigger -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <script defer src="script.js"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand">Alankara</div>
-
-    <nav class="nav-desktop">
-      <a href="#home">Home</a>
-      <a href="#categories">Categories</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+  <!-- Site header with nav and hamburger -->
+  <header id="header">
+    <div class="logo">Alankara</div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
-
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-
-    <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
-      <button class="close-menu" id="closeMenu" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
-      <a href="#home">Home</a>
-      <a href="#categories">Categories</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </aside>
+    <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
   </header>
+  <!-- Mobile navigation menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="close-btn" id="closeMenu"><i class="fas fa-times"></i></div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="home" style="--hero:url('images/hero/hero1.jpg')">
-      <div class="hero-layer"></div>
-      <div class="hero-content">
-        <h1>Experience the Elegance of Alankara</h1>
-        <p>Discover premium jewellery and accessories for every occasion.</p>
-        <a href="#categories" class="btn">Explore Collections</a>
+  <!-- Hero section -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Experience the Elegance of Alankara</h1>
+      <p>Discover premium jewellery and accessories for every occasion.</p>
+      <a href="#categories" class="btn">Explore Collections</a>
+    </div>
+  </section>
+
+  <!-- Categories overview -->
+  <section id="categories" class="categories">
+    <h2>Shop by Category</h2>
+    <div class="category-grid" id="categoryGrid"></div>
+  </section>
+
+  <!-- Product collection/gallery -->
+  <section id="gallery" class="gallery">
+    <h2>Our Collection</h2>
+    <div class="filter-bar" id="filterBar"></div>
+    <div class="product-grid" id="productGrid"></div>
+  </section>
+
+  <!-- About section -->
+  <section id="about" class="about">
+    <h2>About Alankara</h2>
+    <p>
+      At Alankara, we believe jewellery is more than an accessory—it’s an expression of personality and celebration of life’s moments.
+      Each piece in our collection is carefully curated to embody timeless beauty and contemporary style.
+      Explore our range of earrings, rings, jhumkas, bracelets and payals to find the perfect complement for every occasion.
+    </p>
+  </section>
+
+  <!-- Testimonials section -->
+  <section id="testimonials" class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-container">
+      <div class="testimonial">
+        <p>&ldquo;Exquisite designs and great quality!&rdquo;</p>
+        <span>&ndash; Aditi K.</span>
       </div>
-    </section>
-
-    <!-- CATEGORIES -->
-    <section class="categories" id="categories">
-      <h2>Shop by Category</h2>
-      <div class="category-grid" id="categoryGrid"><!-- filled by JS --></div>
-    </section>
-
-    <!-- COLLECTION -->
-    <section class="collection" id="collection">
-      <div class="collection-head">
-        <h2>Our Collection</h2>
-        <div class="filters" id="filterBar"><!-- filled by JS --></div>
+      <div class="testimonial">
+        <p>&ldquo;Alankara jewellery made my day special.&rdquo;</p>
+        <span>&ndash; Rahul S.</span>
       </div>
-      <div class="product-grid" id="productGrid"><!-- filled by JS --></div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="about" id="about">
-      <h2>About Alankara</h2>
-      <p>
-        At Alankara, jewellery is an expression of personality and celebration.
-        Each piece is curated to embody timeless beauty and contemporary style.
-        Explore earrings, rings, jhumkas, bracelets and payals to find your perfect complement.
-      </p>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-      <h2>Contact Us</h2>
-      <p>We sell via Meesho. Tap any product to view specs and purchase on Meesho.</p>
-      <div class="socials">
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <div class="testimonial">
+        <p>&ldquo;Beautiful pieces at affordable prices.&rdquo;</p>
+        <span>&ndash; Neha M.</span>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="site-footer">
-    <small>© <span id="year"></span> Alankara Jewellery & Accessories</small>
+  <!-- Contact section with form -->
+  <section id="contact" class="contact">
+    <h2>Get in Touch</h2>
+    <p>Have questions or feedback? Send us a message and we&rsquo;ll get back to you soon.</p>
+    <form id="contactForm" class="contact-form">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    <p class="meesho-note">Our jewellery is sold via Meesho. Click on a product above to view details and purchase directly on Meesho.</p>
+    <div class="social-icons">
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3>Alankara</h3>
+        <p>Elevate your elegance with our premium jewellery.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#categories">Earrings</a></li>
+          <li><a href="#categories">Rings</a></li>
+          <li><a href="#categories">Jhumka</a></li>
+          <li><a href="#categories">Bracelet</a></li>
+          <li><a href="#categories">Payal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Subscribe for updates and special offers.</p>
+        <form id="newsletterForm" class="newsletter-form">
+          <input type="email" placeholder="Your Email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>&copy; <span id="year"></span> Alankara Jewellery &amp; Accessories. All rights reserved.</small>
+    </div>
   </footer>
 
-  <!-- PRODUCT MODAL -->
-  <div class="modal" id="productModal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="modal-content" role="document">
-      <button class="close-modal" id="closeModal" aria-label="Close product dialog">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <div class="modal-image"><img id="modalImg" alt=""></div>
+  <!-- Product modal with gallery navigation -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <div class="close-modal" id="closeModal"><i class="fas fa-times"></i></div>
+      <div class="modal-image">
+        <img id="modalImg" src="" alt="Product Image" />
+        <button class="prev" id="prevImage" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+        <button class="next" id="nextImage" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+      </div>
       <div class="modal-info">
         <h3 id="modalTitle"></h3>
         <p id="modalDesc"></p>
-        <a id="modalLink" class="btn" target="_blank" rel="noopener">View on Meesho</a>
+        <a id="modalLink" href="#" target="_blank" rel="noopener" class="btn">View on Meesho</a>
       </div>
     </div>
   </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.2/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
